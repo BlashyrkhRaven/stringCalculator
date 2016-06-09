@@ -32,7 +32,7 @@ namespace StringCalculator
                     {
                         negativeNumbers.Append(stringNumber).Append(',');
                     }
-                    else
+                    else if(partial <= 1000)
                     {
                         result += partial;
                     }

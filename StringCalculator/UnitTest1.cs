@@ -65,6 +65,13 @@ namespace StringCalculator
             }
         }
 
+        [TestMethod]
+        public void NumeriSopraMilleIgnorati()
+        {
+            AssertSum("2,1001", 2);
+            AssertSum("//+\n1+2000+3+4", 8);
+        }
+
         private void AssertSum(string inputString, int expected)
         {
             int actual = calculator.Add(inputString);
