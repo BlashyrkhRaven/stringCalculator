@@ -72,6 +72,26 @@ namespace StringCalculator
             AssertSum("//+\n1+2000+3+4", 8);
         }
 
+
+        [TestMethod]
+        public void GestioneDelimitatoriQualsiasiLunghezza()
+        {
+            AssertSum("//+-+\n1+-+2+-+3+-+4", 10);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(Exception), AllowDerivedTypes = true)]
+        public void StringaNonFormattataCorrettamenteDaErrore()
+        {
+           calculator.Add("//+\n1*2*3*4");
+        }
+
+        [TestMethod]
+        public void DatoPiuDiUnDelimitatoreRestituisceLaSomma()
+        {
+            AssertSum("//+;!\n1+2!3;4", 10);
+        }
+
         private void AssertSum(string inputString, int expected)
         {
             int actual = calculator.Add(inputString);

@@ -21,7 +21,7 @@ namespace StringCalculator
                 if (inputString.StartsWith("//"))
                 {
                     var firstRow = inputString.Split("\n".ToCharArray()).First();
-                    separator = firstRow.Substring(2, 1);
+                    separator = firstRow.Substring(2);
                     inputString = inputString.Substring(firstRow.Length);
                 }
                 var stringNumbers = inputString.Split(separator.ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
