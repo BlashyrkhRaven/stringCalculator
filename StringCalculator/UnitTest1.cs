@@ -27,9 +27,21 @@ namespace StringCalculator
             AssertSum("2,3", 5);
         }
 
+        [TestMethod]
+        public void DataUnaStringaConTantiNumeriRitornaLaSomma()
+        {
+            AssertSum("1,2,3", 6);
+            AssertSum("1,2,3,4", 10);
+            AssertSum("1,2,3,4,3,2,1", 16);
+        }
+
+        //public void DataUnaStringaConTantiNumeriSeparatiDaVirgolaONewlineRitornaLaSomma()
+        //{
+        //    AssertSum("1\n2,3", 6);
+        //}
+
         private void AssertSum(string inputString, int expected)
         {
-            
             int actual = calculator.Add(inputString);
             Assert.AreEqual(expected, actual);
         }

@@ -17,7 +17,10 @@ namespace StringCalculator
                 if (inputString.Contains(","))
                 {
                     var stringNumbers = inputString.Split(',');
-                    result = int.Parse(stringNumbers.First()) + int.Parse(stringNumbers.Last());
+                    foreach (var stringNumber in stringNumbers)
+                    {
+                        result += int.Parse(stringNumber);
+                    }
                 }
                 else
                 {
