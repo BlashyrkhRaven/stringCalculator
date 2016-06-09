@@ -47,7 +47,22 @@ namespace StringCalculator
         {
             AssertSum("//;\n2;3;4", 9);
             AssertSum("//+\n1+2+3+4", 10);
-            AssertSum("//;+\n1+2;3+4", 10);
+
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException))]
+        public void DataUnaStringaConNumeriNegativiSollevaUnEccezioneConElencoNumNegativi()
+        {
+            try
+            {
+                calculator.Add("//;\n2;-3;-4;5;-3");
+            }
+            catch (Exception e)
+            {
+                Assert.AreEqual("Negatives not allowed: -3,-4,-3", e.Message);
+                throw;
+            }
         }
 
         private void AssertSum(string inputString, int expected)
