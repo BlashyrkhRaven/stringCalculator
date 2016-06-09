@@ -21,12 +21,20 @@ namespace StringCalculator
             AssertSum("5", 5);
         }
 
+        [TestMethod]
+        public void DataUnaStringaConDueNumeriRitornaLaSomma()
+        {
+            AssertSum("2,3", 5);
+        }
+
         private void AssertSum(string inputString, int expected)
         {
             
             int actual = calculator.Add(inputString);
             Assert.AreEqual(expected, actual);
         }
+
+        
 
 
     }
