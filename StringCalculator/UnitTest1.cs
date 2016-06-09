@@ -4,11 +4,30 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace StringCalculator
 {
     [TestClass]
-    public class UnitTest1
+    public class CalculatorTests
     {
+
+        Calculator calculator = new Calculator();
+
         [TestMethod]
-        public void TestMethod1()
+        public void DataUnaStringaVuotaRitornaZero()
         {
+            AssertSum("", 0);
         }
+
+        [TestMethod]
+        public void DataUnaStringaConUnNumeroRitornaQuelNumero()
+        {
+            AssertSum("5", 5);
+        }
+
+        private void AssertSum(string inputString, int expected)
+        {
+            
+            int actual = calculator.Add(inputString);
+            Assert.AreEqual(expected, actual);
+        }
+
+
     }
 }

@@ -1,0 +1,7 @@
+C:\WS\StringCalculator\StringCalculator\obj\Debug\StringCalculator.csprojResolveAssemblyReference.cache
+C:\WS\StringCalculator\StringCalculator\bin\Debug\StringCalculator.dll
+C:\WS\StringCalculator\StringCalculator\bin\Debug\StringCalculator.pdb
+C:\WS\StringCalculator\StringCalculator\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\WS\StringCalculator\StringCalculator\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
+C:\WS\StringCalculator\StringCalculator\obj\Debug\StringCalculator.dll
+C:\WS\StringCalculator\StringCalculator\obj\Debug\StringCalculator.pdb
