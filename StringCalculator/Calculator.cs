@@ -12,9 +12,16 @@ namespace StringCalculator
         internal int Add(string inputString)
         {
             var result = 0;
+            var separator = ",\n";
             if (!string.IsNullOrEmpty(inputString))
             {
-                var stringNumbers = inputString.Split(",\n".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
+                if (inputString.StartsWith("//"))
+                {
+                    var firstRow = inputString.Split("\n".ToCharArray()).First();
+                    separator = firstRow.Substring(2);
+                    inputString = inputString.Substring(firstRow.Length);
+                }
+                var stringNumbers = inputString.Split(separator.ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
                 foreach (var stringNumber in stringNumbers)
                 {
                     result += int.Parse(stringNumber);

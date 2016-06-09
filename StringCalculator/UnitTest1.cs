@@ -42,6 +42,14 @@ namespace StringCalculator
             AssertSum("1,5\n\n4,2,3", 15);
         }
 
+        [TestMethod]
+        public void DataUnaStringaCheSpecificaNellaPrimaRigaUnDelimitatoreRitornaLaSommaDeiNumeriSeparatiDalDelimitatore()
+        {
+            AssertSum("//;\n2;3;4", 9);
+            AssertSum("//+\n1+2+3+4", 10);
+            AssertSum("//;+\n1+2;3+4", 10);
+        }
+
         private void AssertSum(string inputString, int expected)
         {
             int actual = calculator.Add(inputString);
