@@ -35,10 +35,12 @@ namespace StringCalculator
             AssertSum("1,2,3,4,3,2,1", 16);
         }
 
-        //public void DataUnaStringaConTantiNumeriSeparatiDaVirgolaONewlineRitornaLaSomma()
-        //{
-        //    AssertSum("1\n2,3", 6);
-        //}
+        [TestMethod]
+        public void DataUnaStringaConTantiNumeriSeparatiDaVirgolaONewlineRitornaLaSomma()
+        {
+            AssertSum("1\n2,3", 6);
+            AssertSum("1,5\n\n4,2,3", 15);
+        }
 
         private void AssertSum(string inputString, int expected)
         {
@@ -46,7 +48,7 @@ namespace StringCalculator
             Assert.AreEqual(expected, actual);
         }
 
-        
+
 
 
     }

@@ -14,17 +14,10 @@ namespace StringCalculator
             var result = 0;
             if (!string.IsNullOrEmpty(inputString))
             {
-                if (inputString.Contains(","))
+                var stringNumbers = inputString.Split(",\n".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
+                foreach (var stringNumber in stringNumbers)
                 {
-                    var stringNumbers = inputString.Split(',');
-                    foreach (var stringNumber in stringNumbers)
-                    {
-                        result += int.Parse(stringNumber);
-                    }
-                }
-                else
-                {
-                    result = int.Parse(inputString);
+                    result += int.Parse(stringNumber);
                 }
             }
             return result;
